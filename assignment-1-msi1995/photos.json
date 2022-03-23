@@ -1,0 +1,9 @@
+[
+    {
+        "UserID": 1,
+        "BusinessID": 0,
+        "PhotoURL": "www.fakeurl.com/photo2",
+        "PhotoCaption": "Optional"
+    }
+
+]

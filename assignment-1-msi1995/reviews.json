@@ -1,0 +1,11 @@
+[
+    {
+        "UserID": 1,
+        "BusinessID": 0,
+        "Stars": "Required",
+        "DollarSigns": "Required",
+        "MoreInformation": "Optional"
+
+    }
+
+]

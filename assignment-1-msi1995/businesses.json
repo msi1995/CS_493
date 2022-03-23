@@ -1,0 +1,17 @@
+[
+    {
+        "OwnerID": 1,
+        "Name": "NotReal Incorporated",
+        "StreetAddress": "'Really not real'",
+        "City": "Corvallis",
+        "State": "OR",
+        "ZIPCode": "97330",
+        "Phone": "555-555-5555",
+        "Category": "Example Business",
+        "Subcategory": "Business with fake information",
+        "Website": "Optional",
+        "Email": "Optional"
+
+    }
+
+]

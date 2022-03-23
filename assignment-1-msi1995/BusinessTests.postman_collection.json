@@ -1,0 +1,542 @@
+{
+	"info": {
+		"_postman_id": "f6caa2e4-b2f2-4146-89d2-0fc4bc570b10",
+		"name": "BusinessTests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "View all businesses",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/businesses",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"businesses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Detailed info about business 0",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/businesses/0",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"businesses",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post a new business",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"UserID\": 5,\r\n    \"Name\": \"Test Business 2\",\r\n    \"StreetAddress\": \"123 Test Lane\",\r\n    \"City\": \"Corvallis\",\r\n    \"State\": \"A description\",\r\n    \"ZIPCode\": \"97331\",\r\n    \"Phone\": \"555-544-3333\",\r\n    \"Category\": \"Description 01\",\r\n    \"Subcategory\": \"Subcategory info\",\r\n    \"Website\": \"www.testsite.com\",\r\n    \"Email\": \"lsdfosdf\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/businesses",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"businesses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verify new business is added",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/businesses",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"businesses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post a review of business 0",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"UserID\": 5,\r\n    \"Stars\": \"3\",\r\n    \"DollarSigns\": \"2\",\r\n    \"MoreInformation\": \"Business absolutely SUCKS. Good luck with that financial planning kid.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/businesses/0/review",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"businesses",
+						"0",
+						"review"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post a photo of business 0",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"UserID\": 5,\r\n    \"PhotoURL\": \"www.thisisafakeurl.com/fakefakefake\",\r\n    \"PhotoCaption\": \"a test caption.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/businesses/1/postphoto",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"businesses",
+						"1",
+						"postphoto"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "See business 0 photo/review",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/businesses/0",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"businesses",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "See userID 5's businesses",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8000/user/5/reviews",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"5",
+						"reviews"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "See userID 5's reviews",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8000/user/5/reviews",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"5",
+						"reviews"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "See userID 5's photos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8000/user/5/reviews",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"5",
+						"reviews"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Attempt patch without ownership",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"UserID\": 7,\r\n    \"StreetAddress\": \"patch info\",\r\n    \"City\": \"patch info\",\r\n    \"sdf\": \"test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/businesses/0",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"businesses",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patch business 0 info",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"UserID\": 7,\r\n    \"StreetAddress\": \"patch info\",\r\n    \"City\": \"patch info\",\r\n    \"sdf\": \"test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/businesses/0",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"businesses",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patch review ID 0 info",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"UserID\": 1,\r\n    \"Stars\": \"patch info\",\r\n    \"DollarSigns\": \"please work\",\r\n    \"MoreInfo\": \"test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/reviews/0",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"reviews",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patch photo ID 0 info",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"UserID\": 1,\r\n    \"PhotoCaption\": \"patch info2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/photos/0",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"photos",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View patched info",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/businesses",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"businesses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8000/reviews/1",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"UserID\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/reviews/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"reviews",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8000/photos/1",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"UserID\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/photos/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"photos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verify 1 photo and review deleted",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/businesses",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"businesses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8000/businesses/0",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"UserID\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/businesses/0",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"businesses",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verify business 0 deleted",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		}
+	]
+}

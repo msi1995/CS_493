@@ -1,0 +1,28 @@
+{
+  "name": "assignment-1",
+  "version": "1.0.0",
+  "description": "Setting up a server with Node.js and Express",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "figlet": "^1.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/osu-cs493-sp21/assignment-1-msi1995.git"
+  },
+  "author": "Doug Lloyd <lloyddo@oregonstate.edu>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/osu-cs493-sp21/assignment-1-msi1995/issues"
+  },
+  "homepage": "https://github.com/osu-cs493-sp21/assignment-1-msi1995#readme"
+}

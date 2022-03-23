@@ -1,0 +1,7 @@
+export MONGO_HOST=localhost
+export MONGO_USER=businesses
+export MONGO_PASSWORD=hunter2
+export MONGO_DATABASE=businesses
+npm start
+to get into mongo db:  docker run --rm -it --network assign4 mongo mongo --host mongo-server-assign4 --username root --password hunter2 --authenticationDatabase admin
+node dimensionsWorker.js
